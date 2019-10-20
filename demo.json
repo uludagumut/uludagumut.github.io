@@ -1,9 +1,0 @@
-{
-    "name":"Deneme github veri cekmek isim.json basarili",
-    "age":31,
-    "pets":[
-        { "animal":"dog", "name":"Fido" },
-        { "animal":"cat", "name":"Felix" },
-        { "animal":"hamster", "name":"Lightning" }
-    ]
-}

@@ -4,8 +4,31 @@ function languageswitcher() {
     
     if ( x === "en"){
         console.log("English language");
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var myObj = JSON.parse(this.responseText);
+                var obj13 = myObj.name ;
+                document.getElementById("demo").innerHTML = myObj.name + " "+ myObj.logo +"  | deneme : " + obj13;
+            }
+        };
+        xmlhttp.open("GET", "englishlanguage.json", true);
+        xmlhttp.send();
+
     }else if ( x === "ru") {
         console.log("Russian language");
+        
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var myObj = JSON.parse(this.responseText);
+                document.getElementById("demo").innerHTML = myObj.name + myObj.logo;
+            }
+        };
+        xmlhttp.open("GET", "russianlanguage.json", true);
+        xmlhttp.send();
+
     }else if ( x === "tr") {
         console.log("Turkish language");
     }else {
@@ -23,34 +46,3 @@ function mainmenu() {
     
     document.getElementById("mainmenu").value = "";
 }
-
-
-
-
-
-
-
-
-
-
-
-
-function englishlanguagesection(){}
-/* function englishmainmenu() {
-    var mainmenu = '<div class="navbar"><a href="#home">Home</a><a href="#news">News</a><a href="#contact">Contact</a></div>';
-    document.write(mainmenu);
-    };
-     */
-
-//document.getElementById("navbar").innerHTML = englishmainmenu();
-
-/* 
-
-    <div class="navbar">
-        <a href="#home">Home</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-    </div>
-
-
-*/
